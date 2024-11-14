@@ -68,7 +68,11 @@ class Ball(Basic):
     def collide_block(self, blocks: list):
         # ============================================
         # TODO: Implement an event when the ball hits a block
-        pass
+        for block in blocks:
+            if self.rect.colliderect(block.rect):
+                self.dir = 360 - self.dir + random.randint(-5, 5)
+     
+                block.collide(blocks)
 
     def collide_paddle(self, paddle: Paddle) -> None:
         if self.rect.colliderect(paddle.rect):
@@ -83,7 +87,7 @@ class Ball(Basic):
         # 상단 벽 충돌
         if self.rect.top <= 0:
             self.dir = -self.dir + random.randint(-5, 5)
-            
+
     def alive(self):
         # ============================================
         # TODO: Implement a service that returns whether the ball is alive or not
