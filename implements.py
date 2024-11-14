@@ -77,11 +77,13 @@ class Ball(Basic):
     def hit_wall(self):
         # ============================================
         # TODO: Implement a service that bounces off when the ball hits the wall
-        pass
         # 좌우 벽 충돌
-        
+        if self.rect.left <= 0 or self.rect.right >= config.display_dimension[0]:
+            self.dir = 180 - self.dir
         # 상단 벽 충돌
-    
+        if self.rect.top <= 0:
+            self.dir = -self.dir + random.randint(-5, 5)
+            
     def alive(self):
         # ============================================
         # TODO: Implement a service that returns whether the ball is alive or not
