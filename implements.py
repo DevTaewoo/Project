@@ -33,10 +33,12 @@ class Block(Basic):
     def draw(self, surface) -> None:
         pygame.draw.rect(surface, self.color, self.rect)
     
-    def collide(self):
+    def collide(self, blocks: list):
         # ============================================
         # TODO: Implement an event when block collides with a ball
-        pass
+        self.alive = False      
+        if not self.alive:
+            blocks.remove(self)
 
 
 class Paddle(Basic):
