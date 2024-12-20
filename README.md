@@ -3,7 +3,7 @@
 
 Scrennshots
 -----------
-
+![실제 게임플레이 화면]("C:\Users\pc\Desktop\gameUI_image.png")
 
 
 ## implement
