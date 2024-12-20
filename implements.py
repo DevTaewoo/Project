@@ -102,7 +102,7 @@ class Ball(Basic):
         return True
     
     def set_upward_direction(self):
-        self.dir = random.randint(45, 135)  # 새로운 공 발사각을 45도에서 135도 사이로 랜덤 설정
+        self.dir = random.randint(60, 120)  # 새로운 공 발사각을 45도에서 135도 사이로 랜덤 설정
 class Item(Basic):
     def __init__(self, color, pos):
         if color == config.paddle_long_color:
@@ -128,7 +128,7 @@ class Item(Basic):
             if self.type == "blue":
                 pass
             elif self.type == "red":
-                new_ball = Ball(pos=(paddle.rect.centerx, paddle.rect.top - config.ball_size[1]-5))  # 패들 위치에서 공 발사
+                new_ball = Ball(pos=(paddle.rect.centerx, paddle.rect.top - config.ball_size[1]-10))  # 패들 위치에서 공 발사
                 new_ball.set_upward_direction()
                 balls.append(new_ball) 
                
