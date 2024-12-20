@@ -46,8 +46,10 @@ paddle_long_prob = 0.1
 
 fever_time = 5
 
+
+
 add_score = 100
-add_score_color = (0, 255, 0)
+add_score_color = (255, 0, 0)
 
 paddle_long_ratio = 2
 paddle_long_time = 5

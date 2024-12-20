@@ -63,12 +63,18 @@ def tick():
             ball.rect.centerx = paddle.rect.centerx
             ball.rect.bottom = paddle.rect.top
 
-        ball.collide_block(BLOCKS)
+        ball.collide_block(BLOCKS, ITEMS)
         ball.collide_paddle(paddle)
         ball.hit_wall()
         if ball.alive() == False:
             BALLS.remove(ball)
-
+        
+    for item in ITEMS[:]:
+        item.move()
+        if item.collide(paddle, BALLS):
+            ITEMS.remove(item)  # 패들이 아이템을 먹음음
+        elif item.rect.top > config.display_dimension[1]:  # 아이템이 화면을 벗어나면 제거한다.
+            ITEMS.remove(item)     
 
 def main():
     global life
@@ -91,6 +97,9 @@ def main():
         for block in BLOCKS:
             block.draw(surface)
 
+        for item in ITEMS:
+            item.draw(surface)
+            
         cur_score = config.num_blocks[0] * config.num_blocks[1] - len(BLOCKS)
 
         score_txt = my_font.render(f"Score : {cur_score * 10}", True, config.colors[2])
