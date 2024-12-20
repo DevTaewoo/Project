@@ -8,3 +8,5 @@ Scrennshots
 
 ## implement
 벽돌을 깨면 20%확률로 빨간색 혹은 파란색 공 아이템이 드랍되고 빨간색 공을 먹으면 패들에서 공이 추가로 발사됩니다
+###contributor
+DevTaewoo 
