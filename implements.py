@@ -128,7 +128,10 @@ class Item(Basic):
             if self.type == "blue":
                 pass
             elif self.type == "red":
-                pass
+                new_ball = Ball(pos=(paddle.rect.centerx, paddle.rect.top - config.ball_size[1]-5))  # 패들 위치에서 공 발사
+                new_ball.set_upward_direction()
+                balls.append(new_ball) 
+               
 
                 
             return True  
